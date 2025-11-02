@@ -1,5 +1,5 @@
 """
-后端启动脚本
+Backend startup script
 """
 import uvicorn
 

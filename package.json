@@ -1,7 +1,7 @@
 {
   "name": "agent-security-test-platform",
   "version": "1.0.0",
-  "description": "Agent安全性测试平台 - 向导式流程",
+  "description": "Agent Security Testing Platform - Wizard-based Testing",
   "type": "module",
   "scripts": {
     "dev": "vite",

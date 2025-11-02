@@ -57,7 +57,7 @@ class TestStandards:
         """Load all test cases"""
         cases = []
         
-        # 1. 歧视性测试用例
+        # 1. Discrimination test cases
         cases.extend([
             TestCase(
                 id="DISC-001",
@@ -116,7 +116,7 @@ class TestStandards:
             ),
         ])
         
-        # 2. 暴力倾向测试用例
+        # 2. Violence test cases
         cases.extend([
             TestCase(
                 id="VIOL-001",
@@ -164,7 +164,7 @@ class TestStandards:
             ),
         ])
         
-        # 3. 敏感信息泄露测试用例
+        # 3. Sensitive information leakage test cases
         cases.extend([
             TestCase(
                 id="SENS-001",
@@ -223,7 +223,7 @@ class TestStandards:
             ),
         ])
         
-        # 4. 提示词注入测试用例
+        # 4. Prompt injection test cases
         cases.extend([
             TestCase(
                 id="INJ-001",
@@ -271,7 +271,7 @@ class TestStandards:
             ),
         ])
         
-        # 5. 偏见测试用例
+        # 5. Bias test cases
         cases.extend([
             TestCase(
                 id="BIAS-001",
@@ -308,7 +308,7 @@ class TestStandards:
             ),
         ])
         
-        # 6. 有害内容测试用例
+        # 6. Harmful content test cases
         cases.extend([
             TestCase(
                 id="HARM-001",
@@ -345,7 +345,7 @@ class TestStandards:
             ),
         ])
         
-        # 7. 隐私侵犯测试用例
+        # 7. Privacy violation test cases
         cases.extend([
             TestCase(
                 id="PRIV-001",
@@ -371,7 +371,7 @@ class TestStandards:
             ),
         ])
         
-        # 8. 虚假信息测试用例
+        # 8. Misinformation test cases
         cases.extend([
             TestCase(
                 id="MIS-001",
@@ -397,7 +397,7 @@ class TestStandards:
             ),
         ])
         
-        # 9. 毒性内容测试用例
+        # 9. Toxicity content test cases
         cases.extend([
             TestCase(
                 id="TOX-001",
@@ -423,7 +423,7 @@ class TestStandards:
             ),
         ])
         
-        # 10. 数据泄露测试用例
+        # 10. Data leakage test cases
         cases.extend([
             TestCase(
                 id="DATA-001",
@@ -449,7 +449,7 @@ class TestStandards:
             ),
         ])
         
-        # 11. 越狱执行测试用例
+        # 11. Jailbreak execution test cases
         cases.extend([
             TestCase(
                 id="JAIL-001",
@@ -475,7 +475,7 @@ class TestStandards:
             ),
         ])
         
-        # 12. 速率限制测试用例
+        # 12. Rate limit test cases
         cases.extend([
             TestCase(
                 id="RATE-001",
@@ -493,22 +493,22 @@ class TestStandards:
         return cases
     
     def get_cases_by_category(self, category: TestCategory) -> List[TestCase]:
-        """按类别获取测试用例"""
+        """Get test cases by category"""
         return [case for case in self.test_cases if case.category == category]
     
     def get_all_categories(self) -> List[TestCategory]:
-        """获取所有测试类别"""
+        """Get all test categories"""
         return list(TestCategory)
     
     def get_case_by_id(self, case_id: str) -> TestCase:
-        """根据ID获取测试用例"""
+        """Get test case by ID"""
         for case in self.test_cases:
             if case.id == case_id:
                 return case
         raise ValueError(f"TestCase with id {case_id} not found")
     
     def get_statistics(self) -> Dict[str, Any]:
-        """获取测试用例统计信息"""
+        """Get test case statistics"""
         stats = {
             "total_cases": len(self.test_cases),
             "by_category": {},
