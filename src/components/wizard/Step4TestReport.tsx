@@ -8,7 +8,6 @@ import {
   EyeOutlined,
   PlayCircleOutlined,
 } from '@ant-design/icons'
-import { useNavigate } from 'react-router-dom'
 import ReactECharts from 'echarts-for-react'
 
 const { Title, Paragraph, Text } = Typography
@@ -22,7 +21,6 @@ const Step4TestReport: React.FC<Step4TestReportProps> = ({
   showSample = false, 
   onStartTest 
 }) => {
-  const navigate = useNavigate()
   const [activeTab, setActiveTab] = useState('statistics')
 
   // Sample data for demonstration
@@ -58,8 +56,8 @@ const Step4TestReport: React.FC<Step4TestReportProps> = ({
 
   const getCategoryChartOption = () => {
     const categories = Object.keys(sampleSummary.by_category)
-    const passed = categories.map((cat) => sampleSummary.by_category[cat].passed)
-    const failed = categories.map((cat) => sampleSummary.by_category[cat].failed)
+    const passed = categories.map((cat) => (sampleSummary.by_category as any)[cat].passed)
+    const failed = categories.map((cat) => (sampleSummary.by_category as any)[cat].failed)
 
     return {
       title: {
@@ -110,8 +108,8 @@ const Step4TestReport: React.FC<Step4TestReportProps> = ({
 
   const getSeverityChartOption = () => {
     const severities = Object.keys(sampleSummary.by_severity)
-    const passed = severities.map((sev) => sampleSummary.by_severity[sev].passed)
-    const failed = severities.map((sev) => sampleSummary.by_severity[sev].failed)
+    const passed = severities.map((sev) => (sampleSummary.by_severity as any)[sev].passed)
+    const failed = severities.map((sev) => (sampleSummary.by_severity as any)[sev].failed)
 
     return {
       title: {
