@@ -80,15 +80,30 @@ npm install
 
 #### Development Mode
 
-**Start backend service** (in project root):
+**Option 1: Quick Start (Recommended)**
 
+Use the provided scripts to start both services automatically:
+
+**Windows:**
 ```bash
-cd backend
-uvicorn main:app --reload --port 8000
+start.bat
 ```
 
-**Start frontend service** (in project root):
+**Linux/Mac:**
+```bash
+chmod +x start.sh
+./start.sh
+```
 
+**Option 2: Manual Start**
+
+**Start backend service** (in project root):
+```bash
+cd backend
+python run.py
+```
+
+**Start frontend service** (in new terminal, in project root):
 ```bash
 npm run dev
 ```
@@ -156,10 +171,12 @@ For updates, simply push to GitHub - Vercel will auto-deploy.
 The backend needs separate hosting. Recommended options:
 
 - **Railway**: https://railway.app (easiest)
+  - Connect your GitHub repo
+  - Add Python service
+  - Set root directory to `backend`
+  - Deploy automatically
 - **Render**: https://render.com
-- **Your own server**
-
-See `DEPLOYMENT.md` for detailed instructions.
+- **Your own server**: Deploy using `uvicorn main:app --host 0.0.0.0 --port 8000 --workers 4`
 
 ## API Documentation
 
