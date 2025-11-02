@@ -16,7 +16,7 @@ The frontend is deployed on Vercel, but the backend needs to be deployed separat
 
 5. Configure Settings:
    - **Root Directory**: `/backend`
-   - **Start Command**: `python main.py` (or `uvicorn main:app --host 0.0.0.0 --port $PORT`)
+   - **Start Command**: Leave empty (Railway will auto-detect) OR `python run.py`
 
 6. Environment Variables:
    - Railway automatically sets `$PORT` variable
